@@ -189,20 +189,18 @@
 
   var wizardSpeed = 3;  
   var wizardWidth = 70;
+  var PROPORTION_COEFFICIENT = 1.337;
 
   function getWizardHeight() {
-    var wizardHeight;
-    return wizardHeight = 1.337 * wizardWidth;
+    return PROPORTION_COEFFICIENT * wizardWidth;
   };
 
   function getWizardX(width) {  // put wizard on horizontal
-    var wizardX;
-    return wizardX = width / 2 - wizardWidth / 2;
+    return width / 2 - wizardWidth / 2;
   };
 
   function getWizardY(height) { // put wizard on vertical
-    var wizardY;
-    return wizardY = height / 1.5;
+    return height / 1.5 - getWizardHeight();
   };
 </script>
 
