@@ -9,6 +9,7 @@
 </head>
 <body>
 
+
 <header>
   <svg style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62
         86">
@@ -69,8 +70,8 @@
 
 <div class="overlay setup hidden">
   <form class="setup-wizard-form"
+        action=" https://js.dump.academy/code-and-magick"
         method="post"
-        action="https://js.dump.academy/code-and-magick"
         enctype="multipart/form-data"
         autocomplete="off">
 
@@ -81,13 +82,15 @@
           <input type="file" name="avatar">
         </div>
         <label>
-          <input type="text" name="username" minlength="2" 
+          <input type="text" name="username"
+                 onfocus=""
+                 minlength="2"
                  maxlength="25" required
                  class="setup-user-name" value="Синий Пендальф"/>
         </label>
       </div>
 
-      <span class="setup-close" tabindex="0">&times;</span>
+      <span class="setup-close"tabindex="0">&times;</span>
     </div>
 
 
@@ -156,7 +159,7 @@
         <div class="setup-similar-list"><!--Список похожих персонажей--></div>
       </div>
 
-      <button type="submit" class="button setup-submit">Сохранить</button>
+      <button class="button setup-submit">Сохранить</button>
     </div>
   </form>
 </div>
@@ -181,36 +184,43 @@
     <p class="setup-similar-label">Петр Петров</p>
   </div>
 </template>
+<script type="text/javascript">
+    var fireballSize = 22;
+    var getFireballSpeed = function(left){
+        
+        return left ? 5 : 2;
+    };
+    getFireballSpeed(true);
+    
+    var wizardSpeed = 3;
+    var wizardWidth = 70;
+    var getWizardHeight = function(){
+        
+        return (1.337 * wizardWidth);
+    };
+    getWizardHeight();
+    
+    var getWizardX = function(width){
+        
+        return (width / 2.4);
+    };
+    getWizardX();
+    
+    var getWizardY = function(height){
+        
+        
+       return height / 3;
 
-<canvas id="canvas"></canvas>
-
-<script>
-  var fireballSize = 22;
-  function getFireballSpeed(left) { // fireball speed depends of wind
-    return left ? 5 : 2;
-  };
-
-  var wizardSpeed = 3;  
-  var wizardWidth = 70;
-  var PROPORTION_COEFFICIENT = 1.337;
-
-  function getWizardHeight() {
-    return PROPORTION_COEFFICIENT * wizardWidth;
-  };
-
-  function getWizardX(width) {  // put wizard on horizontal
-    return width / 2 - wizardWidth / 2;
-  };
-
-  function getWizardY(height) { // put wizard on vertical
-    return height / 1.5 - getWizardHeight();
-  };
+    };
+    getWizardY();
+  
 </script>
 
-
+<script src="js/setup.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/wizard-change.js"></script>
 <script src="js/stat.js"></script>
 <script src="js/game.js"></script>
-<script src="js/setup.js"></script>
 
 </body>
 </html>
